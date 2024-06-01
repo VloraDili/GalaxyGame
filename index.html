@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Game</title>
+    <!--  font awesome link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="img/logo.png">Galaxy Game</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <div class="mode-toggle">
+                <button id="dark-mode-toggle" class="mode-toggle-btn" onclick="toggleMode()"><i class="fas fa-moon"></i></button>
+            </div>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <main>
+        <div class="home" id="home">
+            <img src="img/stars.png" id="stars">
+            <img src="img/person.png" id="person">
+            <h2 id="text">Galaxy Game</h2>
+            <a href="#explore" id="btn">Explore <i class="fas fa-arrow-right"></i></a>
+            <img src="img/galaxy_front.png" id="galaxy_front">
+        </div>
+
+        <!-- Games section starts -->
+        <div class="games" id="games">
+            <h2 class="title"><span>Games</span></h2>
+            <div class="box-container">
+                <div class="box">
+                    <img src="img/pacman-img.png" alt="Pacman-img">
+                    <h3>Pac-Man</h3>
+                    <p>Embark on a nostalgic Pac-Man journey! <br>
+                        Navigate, gobble pellets, dodge ghosts.</p>
+                    <a href="Pac-Man/pacman.html" class="gamesBtn">Play</a>
+                </div>
+                <!-- <div class="box">
+                    <img src="" alt="">
+                    <h3>/h3>
+                    <p></p>
+                    <a href="" class="gamesBtn">Play</a>
+                </div>
+                <div class="box">
+                    <img src="" alt="">
+                    <h3></h3>
+                    <p></p>
+                    <a href="" class="gamesBtn">Play</a>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Team section starts -->
+        <div class="team" id="team">
+            <h2 class="title">Our <span> Team </span></h2>
+            <section class="team-section">
+                <div class="our-team">
+                    <div class="team-member">
+                        <img src="img/fatlinda.jpeg" alt="Fatlinda Berisha">
+                        <h3>Fatlinda Berisha</h3>
+                        <p>Junior Web Development</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="img/vlora.jpg" alt="Vlora Dili">
+                        <h3>Vlora Dili</h3>
+                        <p>Junior Web Development</p>
+                    </div>
+                </div>
+            </section>
+        </div>                
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h2>About Us</h2>
+                <p>Game Galaxy is your ultimate destination for galactic adventures. 
+                    Explore a wide range of games that will take you beyond the boundaries of the galaxy.</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-discord"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitch"></i></a></li>
+                    <li><a href="#"><i class="fab fa-steam"></i></a></li>
+                </ul>    
+            </div>
+            <div class="footer-section quicklinks">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Safety & security</a></li>
+                </ul>
+            </div>
+            <div class="footer-section quicklinks">
+                <h2>Galaxy Game</h2>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#explore">Explore</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyrightText">
+            <p>&copy;2024 Fatlinda Berisha & Vlora Dili | All Rights Reserved</p>
+        </div>
+    </footer>    
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/pixi.js@7.x/dist/pixi.min.js"></script>
+</body>
+</html>
