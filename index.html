@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 <body>
     <header>
         <a href="#" class="logo"><img src="img/logo.png">Galaxy Game</a>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#games">Games</a></li>
             <li><a href="#explore">Explore</a></li>
             <li><a href="#team">Our Team</a></li>
@@ -24,38 +25,41 @@
         <div id="menu-btn" class="fas fa-bars"></div>
     </header>
     <main>
-        <div class="home" id="home">
-            <img src="img/stars.png" id="stars">
-            <img src="img/person.png" id="person">
-            <h2 id="text">Galaxy Game</h2>
-            <a href="#explore" id="btn">Explore <i class="fas fa-arrow-right"></i></a>
-            <img src="img/galaxy_front.png" id="galaxy_front">
-        </div>
+        <div class="home" id="home"></div>
 
         <!-- Games section starts -->
         <div class="games" id="games">
-            <h2 class="title"><span>Games</span></h2>
+            <h2 class="title">Our <span> Games </span></h2>
             <div class="box-container">
                 <div class="box">
-                    <img src="img/pacman-img.png" alt="Pacman-img">
-                    <h3>Pac-Man</h3>
-                    <p>Embark on a nostalgic Pac-Man journey! <br>
-                        Navigate, gobble pellets, dodge ghosts.</p>
-                    <a href="Pac-Man/pacman.html" class="gamesBtn">Play</a>
-                </div>
-                <!-- <div class="box">
-                    <img src="" alt="">
-                    <h3>/h3>
-                    <p></p>
-                    <a href="" class="gamesBtn">Play</a>
+                    <img src="img/wordguessing.png" alt="WordGuessing-img">
+                    <h3>Word Guessing</h3>
+                    <p>
+                        Embark on an exciting word guessing adventure! <br>
+                        Guess the hidden word, but watch out for wrong guesses!
+                    </p>
+                    <a href="WordGuessing/word-guessing.html" class="game-button"><span>Play</span></a>
                 </div>
                 <div class="box">
-                    <img src="" alt="">
-                    <h3></h3>
-                    <p></p>
-                    <a href="" class="gamesBtn">Play</a>
-                </div> -->
+                    <img src="img/memorycard.png" alt="">
+                    <h3>Memory Card</h3>
+                    <p>
+                        Exercise your memory with a cosmic twist! <br> 
+                        Explore the depths of the Galaxy as you match pairs of celestial cards in this captivating memory game.
+                    </p>
+                    <a href="memory card/index.html" class="game-button"><span>Play</span></a>
+                </div>
+                <div class="box">
+                    <img src="img/galactic-snake.png" alt="">
+                    <h3>Galactic Snake</h3>
+                    <p>
+                        Set off on a thrilling voyage through the cosmos! <br>
+                        Guide the Galactic Snake and navigate through challenges to reach your goal.
+                    </p>
+                    <a href="Galactic Snake/snake.html" class="game-button"><span>Play</span></a>
+                </div>
             </div>
+        </div>        
         </div>
 
         <!-- Team section starts -->
@@ -75,7 +79,7 @@
                     </div>
                 </div>
             </section>
-        </div>                
+        </div>
     </main>
     <footer>
         <div class="container">
@@ -112,7 +116,7 @@
         <div class="copyrightText">
             <p>&copy;2024 Fatlinda Berisha & Vlora Dili | All Rights Reserved</p>
         </div>
-    </footer>    
+    </footer>
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/pixi.js@7.x/dist/pixi.min.js"></script>
 </body>

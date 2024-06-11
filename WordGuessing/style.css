@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+:root {
+    --main-color: #1b1145;
+    --secondary-color: #412279;
+    --third-color: #100b1f;
+    --fourth-color: #8749bc;
+    --fifth-color: #bb96dc;
+    --box-shadow-color: 0 0 50px 40px #8749bc;
+    --box-shadow2-color: 0 0 50px 40px #1b1145;
+    --dark-mode-color: #f8d82d;
+    --black-color: #0000;
+    --white-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Aldrich', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #bb96dc 0%, #8749bc 25%, #412279 50%,#100b1f 100%, transparent);
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white-color);
+    padding: 1rem;
+    transition: 0.5s;
+    box-shadow: var(--box-shadow-color);
+}
+.logo {
+    color: inherit;
+    font-size: 1.7rem;
+    margin-left: 34px;
+    cursor: default;
+}
+.logo img {
+    width: 50px;
+    height: auto;
+}
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin-right: 30px;
+}
+.nav-links li {
+    margin-right: 1rem;
+    position: relative;
+    margin-top: 8px;
+    transition: transform 0.3s ease;
+}
+.nav-links li:hover {
+    transform: scale(1.1);
+}
+.nav-links li a {
+    color: inherit;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+    color: var(--main-color);
+}
+#menu-btn {
+    display: none;
+}
+.mode-toggle {
+    margin-right: 1rem;
+}
+.mode-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: 10px;
+}
+.mode-toggle-btn:hover {
+    color: var(--dark-mode-color);
+}
+
+/* Word Guessing */
+.wrapper {
+    width: 500px;
+    background: var(--white-color);
+    border-radius: 10px;
+}
+.wrapper h1 {
+    font-size: 25px;
+    font-weight: 600;
+    padding: 20px 25px;
+    color: var(--fourth-color);
+    border-bottom: 2px dashed var(--fourth-color);
+}
+.wrapper .content {
+    margin: 25px 25px 35px;
+}
+/* Hiding this input tag */
+.content .typing-input {
+    opacity: 0;
+    z-index: -999;
+    position: absolute;
+}
+.content .inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.inputs input {
+    height: 57px;
+    width: 56px;
+    margin: 4px;
+    color: var(--fourth-color);
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    background: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 1px solid var(--fourth-color);
+}
+.inputs input:first-child {
+    margin-left: 0px;
+}
+.content .details {
+    margin: 20px 0 25px;
+}
+.details p {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+.content .reset-btn {
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: var(--white-color);
+    font-size: 17px;
+    padding: 15px 0;
+    background: var(--fourth-color);
+    border-radius: 5px;
+}
+.content .reset-btn:hover{
+    background: var(--secondary-color);
+}
+
+/* Dark mode */
+.dark-mode header {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    box-shadow: var(--box-shadow2-color);
+}
+.dark-mode .logo,
+.dark-mode .nav-links li a {
+    color: var(--white-color);
+}
+.dark-mode .mode-toggle-btn {
+    color: var(--white-color);
+}
+.dark-mode .mode-toggle-btn:hover {
+    color: var(--dark-mode-color);
+}
+.dark-mode .wrapper h1 {
+    color: var(--main-color);
+    border-bottom: 2px dashed var(--main-color);
+}
+.dark-mode .inputs input {
+    color: var(--white-color);
+    border: 1px solid var(--main-color);
+}
+.dark-mode .content .reset-btn {
+    background: var(--third-color);
+}
+.dark-mode .content .reset-btn:hover {
+    background: var(--secondary-color);
+}
+
+
+@media screen and (max-width: 460px) {
+    .wrapper {
+      width: 100%;
+    }
+    .wrapper h1{
+      font-size: 22px;
+      padding: 16px 20px;
+    }
+    .wrapper .content{
+      margin: 25px 20px 35px;
+    }
+    .inputs input{
+      height: 51px;
+      width: 50px;
+      margin: 3px;
+      font-size: 22px;
+    }
+    .details p{
+      font-size: 17px;
+    }
+    .content .reset-btn{
+      padding: 14px 0;
+      font-size: 16px;
+    }
+}

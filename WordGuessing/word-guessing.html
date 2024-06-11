@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Guessing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="../img/logo.png">Galaxy Game</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <div class="mode-toggle">
+                <button id="dark-mode-toggle" class="mode-toggle-btn" onclick="toggleMode()"><i class="fas fa-moon"></i></button>
+                <script>
+                    function toggleMode() {
+                        var body = document.body;
+                        var darkModeToggle = document.getElementById('dark-mode-toggle');
+
+                        var isDarkMode = body.classList.contains('dark-mode');
+
+                        if (isDarkMode) {
+                            body.classList.remove('dark-mode');
+                            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                        } else {
+                        body.classList.add('dark-mode');
+                            darkModeToggle.innerHTML = '<span class="sun-icon"><i class="fas fa-sun"></i></span>';
+                        }
+                    }
+                </script>
+            </div>
+        </ul>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <div class="wrapper">
+        <h1>Guess the Word</h1>
+        <div class="content">
+            <input type="text" class="typing-input" maxlength="1">
+            <div class="inputs"></div>
+            <div class="details">
+                <p class="hint">Hint: <span></span></p>
+                <p class="guess-left">Remaining Guesses: <span></span></p>
+                <p class="wrong-letter">Wrong letters: <span></span></p>
+            </div>
+            <button class="reset-btn">Reset Game</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.js"></script>
+    <script src="js/words.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
