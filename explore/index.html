@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Explore</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="logo"><img src="logo.png">Galaxy Game</a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#explore">Explore</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <div class="mode-toggle">
+            <button id="dark-mode-toggle" class="mode-toggle-btn" onclick="toggleMode()"><i class="fas fa-moon"></i></button>
+        </div>
+    </ul>
+    <div id="menu-btn" class="fas fa-bars"></div>
+  </header>
+  <!-- partial:index.partial.html -->
+  <body class="demo-1 loading">
+    <main>
+      <div class="message">Some message for mobile (if needed).</div>
+        <div class="content">
+          <div id="rgbKineticSlider" class="rgbKineticSlider"></div>
+          <nav>
+              <a href="#" class="main-nav prev" data-nav="previous">Prev <span></span></a>
+              <a href="#" class="main-nav next" data-nav="next">Next <span></span></a>
+          </nav>
+          <span class="notice">Swipe left... or right</span>
+        </div>
+      </main>
+    </body>
+    <!-- partial -->
+  <script src='https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/TweenMax.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/imagesLoaded.pkgd.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi-filters.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/rgbKineticSlider.js'></script>
+  <script src="./script.js"></script>
+</body>
+</html>
