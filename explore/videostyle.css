@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+:root {
+    --main-color: #1b1145;
+    --secondary-color: #412279;
+    --third-color: #100b1f;
+    --fourth-color: #8749bc;
+    --fifth-color: #bb96dc;
+    --box-shadow-color: 0 0 50px 40px #8749bc;
+    --box-shadow2-color: 0 0 50px 40px #1b1145;
+    --dark-mode-color: #f8d82d;
+    --black-color: #0000;
+    --white-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Aldrich', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white-color);
+    padding: 1rem;
+    transition: 0.5s;
+    box-shadow: var(--box-shadow-color);
+}
+.logo {
+    color: inherit;
+    font-size: 1.7rem;
+    margin-left: 34px;
+    cursor: default;
+}
+.logo img {
+    width: 50px;
+    height: auto;
+}
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin-right: 30px;
+}
+.nav-links li {
+    margin-right: 1rem;
+    position: relative;
+    margin-top: 8px;
+    transition: transform 0.3s ease;
+}
+.nav-links li:hover {
+    transform: scale(1.1);
+}
+.nav-links li a {
+    color: inherit;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+    color: var(--main-color);
+}
+#menu-btn {
+    display: none;
+}
+.mode-toggle {
+    margin-right: 1rem;
+}
+.mode-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: 10px;
+}
+.mode-toggle-btn:hover {
+    color: var(--dark-mode-color);
+}
+
+.container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 1rem;   
+    padding: .5rem 1rem;
+    text-transform: capitalize;
+}
+
+
+.main-video, .video-playlist {
+    width: 100%;
+    height: 30rem;
+}
+.main-video .title {
+    margin-top: 1rem;
+}
+.main-video video {
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.video-playlist .title {
+    padding-left: 1rem;
+}
+.video-playlist > p {
+    padding: 1rem;
+    color: var(--fourth-color);
+}
+.video-playlist .videos{
+    height: 70%;
+    overflow-y: auto;
+}
+.video-playlist .videos::-webkit-scrollbar {
+    width: .4rem;
+    border-radius: .4rem;
+    background-color: var(--fourth-color);
+}
+.video-playlist .videos::-webkit-scrollbar-thumb {
+    border-radius: .4rem;
+    background-color: var(--white-color);
+}
+.video-playlist .videos .video {
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: .1rem;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+.video-playlist .videos .video:hover {
+    background-color: var(--fifth-color);
+}
+.video-playlist .videos .video.active {
+    background-color: var(--black-color);
+    color: var(--fifth-color);
+}
+
+.video img {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);   
+    width: 1.5rem;
+    height: 1.5rem;   
+    filter: invert(100%);
+}
+.video-playlist .videos .video.active img {
+    filter: invert(100%) sepia(100%) saturate(2000%) hue-rotate(360deg);
+}
+.video p {
+   margin-left: 2.5rem;
+}
+.video h3 {
+    width: 23rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: 100 1rem sans-serif;
+    padding: 0 .5rem;
+}
+
+
+/* Dark mode */
+.dark-mode header {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    box-shadow: var(--box-shadow2-color);
+}
+.dark-mode .logo,
+.dark-mode .nav-links li a {
+    color: var(--white-color);
+}
+.dark-mode .mode-toggle-btn {
+    color: var(--white-color);
+}
+.dark-mode .mode-toggle-btn:hover {
+    color: var(--dark-mode-color);
+}
+.dark-mode .video-playlist > p {
+    padding: 1rem;
+    color: var(--third-color);
+}
+.video-playlist .videos::-webkit-scrollbar {
+    width: .4rem;
+    border-radius: .4rem;
+    background-color: var(--secondary-color);
+}
+.dark-mode .video-playlist .videos .video:hover {
+    background-color: var(--secondary-color);
+}
+.dark-mode .video-playlist .videos .video.active {
+    background-color: var(--black-color);
+    color: var(--main-color);
+}
+
+/* Media query */
+@media screen and (max-width: 990px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
