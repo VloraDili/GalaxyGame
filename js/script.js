@@ -13,3 +13,14 @@ function toggleMode() {
     }
 }
 
+let stars = document.getElementById('stars');
+let person = document.getElementById('person');
+let text = document.getElementById('text');
+let galaxy_front = document.getElementById('galaxy_front');
+
+window.addEventListener('scroll', function(){
+    let value = window.scrollY;
+    stars.style.left = value * 0.3 + 'px';
+    person.style.marginLeft = value * 0.4 + 'px';
+    text.style.marginRight = value * 0.8 + 'px';
+})

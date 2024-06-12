@@ -3,7 +3,7 @@ const cards = document.querySelectorAll(".card"),
     flipsTag = document.querySelector(".flips b"),
     refreshBtn = document.querySelector(".details button");
 
-let maxTime = 1000;
+let maxTime = 30;
 let timeLeft = maxTime;
 let flips = 0;
 let matchedCard = 0;
@@ -42,8 +42,12 @@ function flipCard({ target: clickedCard }) {
 function matchCards(img1, img2) {
     if (img1 === img2) {
         matchedCard++;
-        if (matchedCard == 6 && timeLeft > 0) {
-            return clearInterval(timer);
+        if (matchedCard === 6 && timeLeft > 0) {
+            clearInterval(timer);
+            setTimeout(() => {
+                alert("Congratulations! You won the game!");
+                shuffleCard();
+            }, 500);
         }
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
@@ -61,6 +65,13 @@ function matchCards(img1, img2) {
         cardTwo.classList.remove("shake", "flip");
         cardOne = cardTwo = "";
         disableDeck = false;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            alert("Time's up! Game over!");
+            shuffleCard();
+        }
+
     }, 1200);
 }
 
@@ -163,4 +174,19 @@ function nextSlide() {
     slides[currentIndex].alpha = 0;
     currentIndex = (currentIndex + 1) % slides.length;
     slides[currentIndex].alpha = 1;
+}
+
+function toggleMode() {
+    var body = document.body;
+    var darkModeToggle = document.getElementById('dark-mode-toggle');
+        
+    var isDarkMode = body.classList.contains('dark-mode');
+    
+    if (isDarkMode) {
+        body.classList.remove('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    } else {
+        body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '<span class="sun-icon"><i class="fas fa-sun"></i></span>';
+    }
 }

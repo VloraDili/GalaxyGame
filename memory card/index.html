@@ -2,12 +2,27 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">  
-    <title>Memory Card Game | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Memory Card</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
-   
+    <header>
+      <a href="#" class="logo"><img src="images/logo.png">Galaxy Game</a>
+      <nav>
+          <ul class="nav-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="#games">Games</a></li>
+              <li><a href="../explore/index.html">Explore</a></li>
+              <li><a href="#team">Our Team</a></li>
+              <div class="mode-toggle">
+                <button id="dark-mode-toggle" class="mode-toggle-btn" onclick="toggleMode()"><i class="fas fa-moon"></i></button>
+              </div>
+          </ul>
+      </nav>
+      <div id="menu-btn" class="fas fa-bars"></div>
+  </header>
   <div class="main">
     <div class="wrapper">
       <ul class="cards">
@@ -115,9 +130,8 @@
       </ul>
     </div>
   </div>
-
+  
   <script src="https://pixijs.download/release/pixi.min.js"></script>
   <script src="script.js"></script>
-    
-  </body>
+</body>
 </html>
